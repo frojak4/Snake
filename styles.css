@@ -23,3 +23,14 @@ html {
 #board {
     margin: 0 auto;
 }
+
+#maindiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#score {
+    text-align: center;
+    color: white;
+}

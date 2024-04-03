@@ -10,7 +10,9 @@ let foodY = 7 * blockSize;
 let velocityX = 0;
 let velocityY = 0;
 let snakeBody = []
-
+let score = 0;
+const mainDiv = document.getElementById("maindiv");
+const scoreDiv = document.getElementById("score");
 
 window.onload = function() {
     board = document.getElementById("board")
@@ -33,6 +35,7 @@ function updateView() {
 
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY])
+        score ++;
         placeFood();
     }
 
@@ -64,7 +67,9 @@ function updateView() {
     
     
 
-    
+    scoreDiv.innerHTML = /*HTML*/`
+    <h3> Score: ${score} </h3>
+    `
 
     gameOver();
 }
@@ -91,6 +96,10 @@ function changeDirection(e) {
 
 function placeFood() {
     foodX = Math.floor(Math.random() * cols) * blockSize;
+    foodY = Math.floor(Math.random() * rows) * blockSize;
+
+    
+
 }
 
 function gameOver() {
